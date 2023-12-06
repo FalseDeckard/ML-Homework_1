@@ -14,8 +14,8 @@ from starlette.responses import StreamingResponse
 
 app = FastAPI()
 
-df_train = pd.read_csv('https://raw.githubusercontent.com/hse-mlds/ml/main/hometasks/HT1/cars_train.csv')
-df_test = pd.read_csv('https://raw.githubusercontent.com/hse-mlds/ml/main/hometasks/HT1/cars_test.csv')
+df_train = pd.read_csv('/cars_train.csv')
+df_test = pd.read_csv('/cars_test.csv')
 df_unique_train = df_train.drop_duplicates(subset=df_train.columns.drop('selling_price'))
 df_unique_test = df_test.drop_duplicates(subset=df_train.columns.drop('selling_price'))
 df_unique_train = df_unique_train.reset_index(drop=True)
